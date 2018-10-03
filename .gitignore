@@ -1,0 +1,12 @@
+#
+.DS_Store
+
+# Latex
+*.aux
+*.log
+*.bbl
+*.blg
+*.synctex.gz
+
+# temp files
+*~*
