@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.5in]{geometry}
+
+%dummy text
+\usepackage{lipsum}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{1} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbe
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section*{Relevance to Public Health}
+
+\textbf{Describe the relevance of this research to public health in, at most, three sentences. For example,
+NIH applicants can describe how, in the short or long term, the research would contribute to
+fundamental knowledge about the nature and behavior of living systems and/or the application
+of that knowledge to enhance health, lengthen life, and reduce illness and disability. If the
+application is funded, this public health relevance statement will be combined with the project
+summary (above) and will become public information.}
+
+\lipsum[111]
+
+\end{document}

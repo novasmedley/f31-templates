@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+%dummy text
+\usepackage{lipsum}
+
+% margins
+\usepackage{geometry}
+\geometry{margin=0.5in}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+%\setcounter{section}{7} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section*{Protection of Human Subjects}
+
+This project qualifies for Exemption 4: Research involving the collection or study of existing data, documents, records, pathological specimens, or diagnostic specimens, if these sources are publicly  available or if the information is recorded by the investigator in such a manner that subjects cannot be identified, directly or through identifiers linked to the subjects.
+
+This project uses XX. 
+
+Because this project qualifies for Exemption 4, no attachments for Inclusion of Women and Minorities or Inclusion of Children are provided.
+\end{document}

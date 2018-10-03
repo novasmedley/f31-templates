@@ -1,0 +1,296 @@
+\documentclass[11pt]{article}
+% dummy text
+\usepackage{lipsum}  
+
+% brackets
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+\usepackage{varwidth}% http://ctan.org/pkg/varwidth
+
+\newsavebox{\leftbox} \newsavebox{\rightbox}%
+
+\NewDocumentCommand{\lrboxbrace}{s O{\{} O{\}} O{0\linewidth} m O{0.8\linewidth} m}{% \lrboxbrace[<lbrace>][<rbrace>][<lwidth>]{<ltext>}[<rwidth>]{<rtext>}
+  \begin{lrbox}{\rightbox}% Right box
+    \IfBooleanTF{#1}% starred/unstarred
+      {\begin{varwidth}{#6}#7\end{varwidth}}
+      {\begin{minipage}{#6}#7\end{minipage}}
+  \end{lrbox}
+  \ensuremath{\usebox\leftbox\left#2\,\usebox\rightbox\,\right#3}
+}
+
+% citations
+\usepackage{cite} % allows citation range (e.g., 5-6 instead of 5,6,7)
+\usepackage{graphicx,url}   % allow figures          
+\usepackage[font=small,labelfont=bf]{caption} % formatting of caption titles
+\usepackage{amsmath} % math symbols
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{3} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+% margins
+\usepackage{geometry}
+\geometry{margin=0.5in}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\renewcommand\thesubsection{\Alph{subsection}}
+
+%%%%%%% fonts
+%%%%%%% helvetica:
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% table formating
+\usepackage{multirow}
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%
+\usepackage{wrapfig}
+\setlength{\belowcaptionskip}{0pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength\intextsep{1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Specific Aims
+\section*{Specific Aims [1 pg]}
+
+\textbf{State concisely the goals of the proposed research and summarize the expected outcome(s),
+including the impact that the results of the proposed research will have on the research field(s)
+involved.
+List succinctly the specific objectives of the research proposed (e.g., to test a stated hypothesis,
+create a novel design, solve a specific problem, challenge an existing paradigm or clinical practice,
+address a critical barrier to progress in the field, or develop new technology).}
+
+Cite these \cite{einstein, knuthwebsite, latexcompanion}.
+\lipsum[71-72]
+
+\vspace{1mm}
+\subsection*{Aim 1: \hspace*{10pt} To evaluate xx.}
+\vspace{1mm}
+\subsection*{Aim 2:  \hspace*{10pt} To compare xx.}
+\vspace{1mm}
+\subsection*{Aim 3:  \hspace*{10pt} To determine xx.}
+\vspace{3mm}
+
+ \lipsum[74-76]
+
+\textbf{Expected impact.}
+\lipsum[77]
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Research Strategy
+\section*{Research Strategy [6 pg]}
+
+\subsection*{Significance}
+
+\textbf{Explain the importance of the problem or critical barrier to progress that the proposed
+project addresses. Explain how the proposed project will improve scientific knowledge, technical capability, and/or clinical practice in one or more broad fields. Describe how the concepts, methods, technologies, treatments, services, or preventative interventions that drive this field will be changed if the proposed aims are achieved.}
+
+\textbf{Clinical significance.} 
+ \lipsum[86-89] 
+
+\textbf{Scientific premise.} 
+\lipsum[90-93]
+
+
+\subsection*{Aim 1 Approach}
+\textbf{Describe the overall strategy, methodology, and analyses to be used to accomplish the
+specific aims of the project. Unless addressed separately in the Resource Sharing Plan
+attachment, include how the data will be collected, analyzed, and interpreted as well as
+any resource sharing plans as appropriate. Discuss potential problems, alternative strategies, and benchmarks for success anticipated to achieve the aims. If the project is in the early stages of development, describe any strategy to establish feasibility, and address the management of any high risk aspects of the proposed work.}
+
+\begin{wraptable}{r}{.35\textwidth}
+	\footnotesize
+	\centering
+	\caption{Caption}
+	\label{tab: datasets}
+	\begin{tabular}{ |c|c|c|c|c| } 
+	\hline
+	\textbf{Source} & \textbf{Data Type} & \textbf{Total}  & \textbf{Has Imaging}\\
+	\hline
+	A & a & 123 & 123 \\
+	 & b & 123 & 123  \\
+	\hline
+	B & a & 123 & 123\\
+	\hline
+	\end{tabular}
+\end{wraptable} 
+
+\textbf{Data sources.} 
+\lipsum[98]
+
+\begin{wraptable}{r}{0.2\textwidth}
+	\footnotesize
+	\centering
+	\caption{Caption} 
+	\label{tab: features}
+	\begin{tabular}{ |l|l|c|c| }
+	\hline
+	\textbf{Feature} & \textbf{Description} \\
+	\hline
+	cell1 & cell2\\
+	\hline
+	cell3 & cell4\\
+	\hline
+	cell5 & cell16\\
+	\hline
+	cell7 & cell8\\
+	\hline
+	cell9 & cell10\\
+	\hline
+	cell11 & cell12\\
+	\hline
+	\multirow{2}*{cell13} & cell14a \\ 
+									& cell14b\\
+	\hline
+	cell15 & cell16\\
+	\hline	
+	\end{tabular}
+\end{wraptable}
+
+\textbf{Methods.} 
+\textit{Data collection}. 
+Table \ref{tab: datasets}. \lipsum[99]
+
+\textit{Data preprocessing.}
+\lipsum[100-101]
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\footnotesize
+	\centering
+   	\includegraphics[width=.37\textwidth]{../figures/sunset.jpg}
+	 \caption{Caption}
+   	\label{fig:neural net}
+   	\vspace{-1em}
+\end{wrapfigure}
+
+\textit{Model training.} 
+Figure \ref{fig:neural net}. Table \ref{tab: hyperparams}.  
+\lipsum[101-102]
+
+\begin{wraptable}{r}{0.4\textwidth}
+	\footnotesize
+	\centering
+	\caption{Caption}
+	\label{tab: hyperparams}
+	\begin{tabular}{ |c|l|c|c| }
+	\hline
+	\textbf{Hyperparameter} & \textbf{Description} & \textbf{Range}& \textbf{Values} \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	cell1 & cell2 & cell3 & cell4 \\
+	\hline
+	\end{tabular}
+\end{wraptable}
+
+\lipsum[104-106] 
+
+\textbf{Evaluation.} 
+\lipsum[107-109]
+
+
+\subsection*{Aim 2 Approach}
+\lipsum[60-61]
+
+\textbf{Methods.} 
+
+\lipsum[113-114]
+
+\textbf{Evaluation.} 
+\lipsum[115]
+
+\subsection*{Aim 3 Approach}
+\begin{wraptable}{r}{0.21\textwidth}
+	\footnotesize
+	\centering
+	\caption{Caption} 
+	\label{tab: radiomic features}
+	\begin{tabular}{ |c|l|c|c| }
+	\hline
+	& \textbf{Feature} & \textbf{Formula} \\
+	\hline
+	\parbox[t]{2mm}{\multirow{4}{*}{\rotatebox[origin=c]{90}{cella}}} 
+		& \rule{0pt}{2.5ex} cell1 & cell2 \\
+		\cline{2-3}
+		& \rule{0pt}{4.5ex} cell1 & cell2  \\
+	\hline
+	\parbox[t]{2mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{cella}}} 
+		& \rule{0pt}{2.5ex} cell1 & cell2  \\
+		\cline{2-3}
+		& \rule{0pt}{3.5ex}c ell1 & cell2  \\
+	\hline
+	\parbox[t]{2mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{cella}}} 
+		& \rule{0pt}{3.6ex} cell1 & cell2  \\
+		\cline{2-3}
+		& \rule{0pt}{4.5ex} cell1 & cell2  \\
+	\hline
+	\end{tabular}
+\end{wraptable}
+Table \ref{tab: radiomic features}. \lipsum[116]
+
+\textbf{Methods.} 
+\lipsum[118]
+
+\textbf{Evaluation.} 
+\lipsum[119]
+
+\subsection*{Potential Pitfalls and Alternatives}
+
+\lipsum[120-121]
+
+
+\subsection*{Preliminary Results}
+
+\textbf{For new applications, include information on preliminary studies (including data collected by
+others in the lab), if any. Discuss the applicant's preliminary studies, data, and/or experience
+pertinent to this application. }
+
+\begin{wrapfigure}{r}{0.53\textwidth}
+\vspace{-0.5em}
+	\footnotesize
+	\centering
+   	\includegraphics[width=.5\textwidth]{../figures/bee.jpg}
+	 \caption{Caption}
+   	\label{fig:imggene}
+   	\vspace{0em}
+\end{wrapfigure}
+
+\lipsum[123-125]
+
+%%%%%%%% CITATIONS 
+\clearpage
+%%%%%%%% compile twice in LaTeX or XeLaTeX twice, then once in BibTex, and then again in LaTeX or XeLaTeX to set citations. Only need to do this again if BibTex has been updated. Compile document changes normally to update it.
+
+\bibliographystyle{ieetrCustom} % citation style
+\bibliography{sample} % relative location of .bib filename
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+
+%dummy text
+\usepackage{lipsum}
+
+% margins
+\usepackage{geometry}
+\geometry{margin=0.5in}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{7} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{Training in Responsible Conduct of Research (RCR) [1 pg]}
+
+\textbf{The plan must address the five required instructional components outlined in the NIH Policy on Instruction in the Responsible Conduct of Research (RCR), as more fully described in the Supplemental Instructions, Part III, Section 1.16: Policy on Instruction in the Responsible Conduct of Research}
+
+\subsection*{Completed Training} 
+\lipsum[1-3]
+
+\subsection*{Ongoing Training}
+\lipsum[4-6]
+
+
+\end{document}

@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+%dummy text
+\usepackage{lipsum}
+
+% margins
+\usepackage{geometry}
+\geometry{margin=0.5in}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+
+\setlength\parindent{0pt} % No paragraph indents
+%\setcounter{section}{7} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+%\setlist{nosep}
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{Resource Sharing Plan}
+
+\textbf{NIH considers the sharing of unique research resources developed through NIH-sponsored
+research an important means to enhance the value and further the advancement of the research.
+When resources have been developed with NIH funds and the associated research findings
+published or provided to NIH, it is important that they be made readily available for research
+purposes to qualified individuals within the scientific community. }
+
+Links to direct researchers to these resources will be shared wherever results are presented or published.
+
+\textbf{Source Code.} \lipsum[110]
+
+\textbf{Models.} \lipsum[109]
+ 
+\textbf{Data.} \lipsum[108]
+
+\end{document}

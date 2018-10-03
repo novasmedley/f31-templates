@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+
+%dummy text
+\usepackage{lipsum}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{pgfgantt}
+\usepackage{graphicx,caption}
+\usepackage{xcolor}
+%\usetikzlibrary{positioning}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{1} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{Selection of Sponsor and Institution [1 pg]}
+\textbf{Describe the rationale/justification for the selection of both the sponsor and the institution.}
+\begin{enumerate}
+	\item Explain why the sponsor, co-sponsor (if any), and institution were selected to accomplish
+	the research training goals. If the proposed research training is to take place at a site
+	other than the applicant organization, provide an explanation here.
+	\item Foreign Institution. If you are proposing a research training experience at a foreign
+	institution, describe how that the foreign institution and sponsor offer special
+	opportunities for training that are not currently available in the United States. Key
+	factors in the selection of a foreign institution should be described. The need for and
+	level of proficiency in reading, speaking, and comprehending the foreign language
+	should be addressed.
+	\item Postdoctoral and Senior Fellowship Applicants requesting training at their
+	Doctorate or Current Institution: Training is expected to broaden a fellow's perspective.
+	Therefore, if you are requesting training at either your doctorate institution or any
+	institution where you have been training for more than a year, you must explain why
+	further training at that institution would be valuable. Individuals applying for senior
+	fellowships who are requesting training at the institution at which they are employed
+	should provide a similar explanation.
+\end{enumerate}
+
+\subsection*{Institution}
+\lipsum[50-52]
+
+\subsection*{Sponsors}
+\lipsum[56-58]
+
+\end{document}

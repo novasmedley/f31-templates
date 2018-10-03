@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{pgfgantt}
+\usepackage{graphicx,caption}
+\usepackage{xcolor}
+%\usetikzlibrary{positioning}
+
+% dummy text
+\usepackage{lipsum}	
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{1} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+\ganttset{group/.append style={black},
+milestone/.append style={red}}
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%% brackets
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+\usepackage{varwidth}% http://ctan.org/pkg/varwidth
+
+\newsavebox{\leftbox} \newsavebox{\rightbox}%
+
+\NewDocumentCommand{\lrboxbrace}{s O{\{} O{\}} O{0\linewidth} m O{0.8\linewidth} m}{% \lrboxbrace[<lbrace>][<rbrace>][<lwidth>]{<ltext>}[<rwidth>]{<rtext>}
+  \begin{lrbox}{\rightbox}% Right box
+    \IfBooleanTF{#1}% starred/unstarred
+      {\begin{varwidth}{#6}#7\end{varwidth}}
+      {\begin{minipage}{#6}#7\end{minipage}}
+  \end{lrbox}
+  \ensuremath{\usebox\leftbox\left#2\,\usebox\rightbox\,\right#3}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{document}
+
+%\section*{Applicant’s Background and Goals for Fellowship Training}
+
+\section*{Doctoral Dissertation and Research Experience [6 pg]}
+\textbf{Summarize your research experience in chronological order. Advanced graduate students, who have (or will have) completed their comprehensive examinations by the time of award, must also include a narrative of their doctoral dissertation (may be preliminary). If you have no research experience, list other scientific experience. Do not list academic courses. In summarizing their research experience, Postdoctoral and Senior Fellowship applicants should include the areas studied and conclusions drawn. Postdoctoral fellowship applicants should also specify which areas of research were part of their thesis or dissertation and which, if any, were part of a previous postdoctoral project.}
+
+\subsection*{Month Year -- Month Year}
+Department, School (City, State) \newline
+Mentor: \textbf{Name, Degree}
+
+\lipsum[2-3]
+
+\subsection*{Month Year -- Month Year}
+Department, School (City, State) \newline
+Mentor: \textbf{Name, Degree}
+
+\lipsum[4]
+
+\subsection*{Month Year -- Month Year}
+Department, School (City, State) \newline
+Mentors: \textbf{Name, Degree}; \textbf{Name, Degree}
+
+\lipsum[5]
+
+
+\subsection*{Month Year -- Present}
+Department, School (City, State) \newline
+Mentors: \textbf{Name, Degree}; \textbf{Name, Degree}
+
+\lipsum[6-8]
+
+\section*{Training Goals and Objectives}
+Describe your overall training goals for the duration of the fellowship, and explain how the proposed fellowship will enable the attainment of these goals. Identify the skills, theories, conceptual approaches, etc. to be learned or enhanced during the award. As applicable, discuss how the proposed research will facilitate your transition to the next career stage.
+
+\lipsum[9-10]
+
+\section*{Activities Planned Under this Award}
+\textbf{Describe, by year, the activities (research, coursework, etc.) you will be involved in during the proposed award and estimate the percentage of time to be devoted to each activity, based on a normal working day for a full-time fellow as defined by the sponsoring institution; the percentage should total 100 for each year. The activities planned under this award should be individually tailored and well integrated with your research project. Describe the skills and techniques that you intend to learn as well as any planned, non-research activities (e.g. those relating to professional development and clinical activities) during the award period. Provide a timeline detailing the proposed research training and related activities for the entire duration of the program:
+}
+List paper topic, venue, brief description:
+
+\begin{enumerate}
+\item \lipsum[11]
+\item \lipsum[12]
+\item \lipsum[13]
+\item \lipsum[14]
+\end{enumerate}
+
+The figure below describes the activities I will be involved in during the proposed research training plan.
+
+\begin{figure}[h]
+     \begin{ganttchart}[%Specs
+     y unit title=0.5cm,
+     y unit chart=0.55cm,
+     vgrid,hgrid,
+     title height=1,
+     title label font=\bfseries\footnotesize,
+     bar/.style={fill=blue},
+     bar label font=\color{black!50},
+     bar height=0.7,
+     group right shift=0,
+     group top shift=0.7,
+     group height=.3,
+     group peaks width={0.2}, inline]{1}{24}
+    %labels
+    \gantttitle[]{Year 1}{12}
+    \gantttitle[]{Year 2}{12} \\              
+    \gantttitle{Fall}{3}                      % title 2
+    \gantttitle{Winter}{3}
+    \gantttitle{Spring}{3}
+    \gantttitle{Summer}{3}
+    \gantttitle{Fall}{3}
+    \gantttitle{Winter}{3}
+    \gantttitle{Spring}{3} 
+    \gantttitle{Summer}{3}\\
+    % Setting group if any
+    
+    \ganttgroup[inline=false,group/.append style={blue}]{RESEARCH}{1}{24}\\
+    
+    \ganttgroup[inline=false]{Aim 1}{1}{12}\\
+    \ganttbar[progress=33,inline=false, bar/.append style={fill=orange}]{task}{1}{1} \\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{1}{5} \\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{2}{7} \\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{2}{7} \\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{7}{9} \\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{5}{6}
+    \ganttbar[progress=15,inline=false,bar/.append style={fill=orange}]{}{1}{2}\\
+    \ganttbar[progress=0,progress label text={},inline=false]{task}{2}{3}  
+    \ganttbar[progress=0,progress label text={},inline=false]{}{6}{7} 
+    \ganttbar[progress=0,progress label text={},inline=false]{}{10}{12} \\
+  
+  	\ganttgroup[inline=false]{Aim 2}{13}{18}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{13}{14} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{13}{13} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{14}{16} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{15}{16} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{15}{16} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{17}{18} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{task}{17}{18} \\
+  	
+  	\ganttgroup[inline=false]{Coursework}{4}{6}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Course}{4}{6}\\
+  	
+  	\ganttgroup[inline=false]{Other Dissertation Milestones}{19}{24}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Writing}{19}{24} \\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Defense}{24}{24}\\
+  	
+  	\ganttgroup[inline=false,group/.append style={blue}]{MEETINGS \& SEMINARS (10\%)}{1}{24}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Lab Meeting/Journal Club -- weekly}{1}{24}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Group Meetings -- biweekly}{1}{24}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Research Lunch Series -- weekly}{1}{24}\\
+  	
+  	\ganttgroup[inline=false,group/.append style={blue}]{OTHER CAREER ACTIVITIES (5\%)}{1}{24}\\
+  	\ganttbar[progress=0,progress label text={},inline=false]{Conference}{2}{2}
+  	\ganttbar[progress=0,progress label text={},inline=false]{}{14}{14}\\  	  	
+  	 \ganttbar[progress=0,progress label text={},inline=false]{Conference}{11}{11} \\
+  	 \ganttbar[progress=0,progress label text={},inline=false]{Conference}{7}{7}
+  	 \ganttbar[progress=0,progress label text={},inline=false]{}{19}{19}
+
+%  	
+%  	
+\end{ganttchart}\caption*{\textbf{Timeline for Proposal}. }
+\end{figure}
+\end{document}

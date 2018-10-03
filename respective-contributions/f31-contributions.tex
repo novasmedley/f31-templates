@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+
+%dummy text
+\usepackage{lipsum}
+
+% margins
+\usepackage{geometry}
+\geometry{margin=0.5in}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+
+\setlength\parindent{0pt} % No paragraph indents
+%\setcounter{section}{7} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+%\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\section*{Respective Contributions [1 pg]}
+
+\textbf{Describe the collaborative process between you and your sponsor/co-sponsor(s) in the development, review, and editing of this Research Training Plan. Also discuss your respective roles in accomplishing the proposed research.}
+
+\lipsum[5-8]
+
+The respective roles between my sponsors and I in accomplishing this research are as follows\begin{itemize}
+	\item \textbf{XX, primary sponsor:} \lipsum[11-12]
+	\item \textbf{XX, co-sponsor:} \lipsum[13-14]
+	
+\end{itemize}
+
+
+
+\end{document}

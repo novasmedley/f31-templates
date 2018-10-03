@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+%dummy text
+\usepackage{lipsum}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{pgfgantt}
+\usepackage{graphicx,caption}
+\usepackage{xcolor}
+%\usetikzlibrary{positioning}
+
+% section title spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{1pt plus 2pt minus 2pt}{-4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{0pt plus 2pt minus 2pt}{-3pt plus 2pt minus 2pt}
+
+\setlength\parindent{0pt} % No paragraph indents
+\setcounter{section}{1} % Set section counter
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % Set subsections to alpha listing
+\pagenumbering{gobble} % turn off page numbering
+
+\ganttset{group/.append style={black},
+milestone/.append style={red}}
+%%%%%%% Times and others (must compile under XeLaTeX):
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % to allow en dashes, must be before \setmainfont{}
+\setmainfont{Times New Roman}
+
+%%%%%%% space between paragraphs
+\setlength{\parskip}{6pt} 
+
+%%%%%%% spacing betwen itmes in lists
+\usepackage{enumitem}
+\setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\section*{Description of Institutional Environment and Commitment to Training [2 pg]}
+
+\textbf{Document a strong, well-established research program related to the candidate's area of
+interest. Describe opportunities for intellectual interactions with other investigators, including
+courses offered, journal clubs, seminars, and presentations. Indicate the facilities and other
+resources that will be made available for both career enhancement and the research proposed in
+this application.}
+
+\textbf{UCLA Medical Imaging Informatics (MII)}. 
+\lipsum[20-22]
+
+\textbf{UCLA Clinical and Translational Science Institute (CTSI).} 
+\lipsum[30]
+
+\textbf{UCLA Institute for Quantitative and Computational Biosciences (QCBio).} 
+\lipsum[40]
+
+\textbf{HeartBD2K \& BD2K Coordinating Centers.} 
+\lipsum[50]
+
+\subsection*{Additional Educational Information}
+
+\textbf{Describe the institution’s dual-degree (F30) or graduate (F31) program in which the
+applicant is enrolled. This description should include the structure of the program, the
+required milestones and their usual timing, the number of courses, any teaching
+commitments or qualifying exams, and the average time to degree over the past 10 years.
+Describe the progress/status of the applicant in relation to the program’s timeline, and the frequency and method by which the program formally monitors and evaluates a student’s
+progress.}
+
+\textbf{Include the name of the individual providing this information at the end of the description. This information is typically provided by the director of the graduate program or the
+department chair.}
+
+\textbf{UCLA Bioengineering.} 
+\lipsum[51-53]
+
+\textbf{MII advising.} 
+\lipsum[60-61]
+
+\begin{enumerate}[leftmargin=1.75em]
+	\item \underline{Journal club.} \lipsum[21]
+	\item \underline{Lab meetings.} \lipsum[22]
+	\item \underline{National meetings/conferences.} \lipsum[23]
+\end{enumerate}
+
+\textbf{Applicant progress through UCLA Bioengineering/MII.} 
+\lipsum[24]
+
+\textit{This information has been provided by Dr. XX.}
+
+\end{document}
