@@ -51,10 +51,10 @@ Check out the PDF files in each folder to see dummy examples of content in some 
 The order of what to write is based on importance:
 1. **Specific Aims**
 
-  You need to know *exactly* what the research goals are in words understandable by another researcher in, around, or out of your research domain.
+   You need to know *exactly* what the research goals are in words understandable by another researcher in, around, or out of your research domain.
 2. **Research Strategy**
 
-  Your project proposal of what you will be doing with the funds.
+   Your project proposal of what you will be doing with the funds.
 
 
 Finishing 2 means you're like, 90% done.
@@ -63,11 +63,11 @@ Finishing 2 means you're like, 90% done.
 4. **Biographical Sketch** - your biosketch (NIH has the [biosketch form](https://grants.nih.gov/grants/forms/biosketch.htm))
 5. **Description of Institutional Environment and Commitment to Training**
 
-  Try to use components from previous grant applications submitted by your lab. Do include your training program, your university details, on-campus resource, external resources like Amazon Web Services, lab space, equipment, and etc.
+   Try to use components from previous grant applications submitted by your lab. Do include your training program, your university details, on-campus resource, external resources like Amazon Web Services, lab space, equipment, and etc.
 
 5. **everything else**
 
-  This includes a cover letter, grades, and if applicable, protection of human subjects statement.
+   This includes a cover letter, grades, and if applicable, protection of human subjects statement.
 
 *Meanwhile*, you should be contacting people to do or get these:
 1. **Sponsor and Co-Sponsor Statements** - their background, experience, related projects (i.e., funding), and etc.
@@ -88,17 +88,17 @@ You're gonna need some stuff first.
 Tested on 18.04
 1. Install Latex, e.g.,
 
-  `sudo apt install texlive-latex-extra`
+   `sudo apt install texlive-latex-extra`
 2. Install an editor, e.g., for TeXstudio:
 
-  ```bash
-  sudo add-apt-repository ppa:sunderme/texstudio
-  sudo apt-get update
-  sudo apt-get install texstudio
-```
+   ```bash
+   sudo add-apt-repository ppa:sunderme/texstudio
+   sudo apt-get update
+   sudo apt-get install texstudio
+   ```
 3. Install some open type fonts, specifically for Times New Roman
 
-  `sudo apt-get install msttcorefonts`
+    `sudo apt-get install msttcorefonts`
 
 4. Open a `.tex` file, e.g., with TeXstudio, edit content, and compile under LuaLaTeX.
 
